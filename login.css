@@ -1,0 +1,175 @@
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        *:focus {
+            outline: 0;
+        }
+
+        .background {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background-color: white;
+        }
+
+        .img {
+            width: calc(50% - 14.5rem);
+            height: 100%;
+            background-image: url("cover-login-page.png");
+            position: absolute;
+            right: 0px;
+            z-index: 1;
+            background-position: center;
+            background-color: #222;
+        }
+
+        .background-img {
+
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .64);
+        }
+
+        .form {
+            z-index: 3;
+            width: 550px;
+            min-height: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-input {
+            position: relative;
+            border: 1px solid hsla(0, 0%, 44%, .14);
+            box-shadow: 0 3px 6px 0 rgb(0 0 0 / 3%);
+            /* border-radius: 5px; */
+            background-color: white;
+            padding: 35px;
+        }
+
+        .title,
+        .sub-title {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            letter-spacing: .20rem;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            margin-bottom: 2.4em;
+            letter-spacing: 0.1rem;
+        }
+
+        .input-element {
+            margin-bottom: 0.6rem;
+        }
+
+        .input-element label {
+            color: #222;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        input::placeholder {
+            color: #a9a9a9;
+            height: 40px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: .10rem;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            height: 55px;
+            background-color: #143268;
+            color: #fff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            letter-spacing: .20rem;
+            font-weight: 500;
+        }
+
+        input[type=submit]:hover {
+            background-color: #2c426a;
+        }
+
+        .text-link a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: #a9a9a9;
+            font-size: 0.9em;
+            font-weight: 500;
+            letter-spacing: .10rem;
+        }
+
+        .text-link a:hover {
+            color: #2c426a;
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 991.98px) {
+            body {
+                min-height: 100vh;
+            }
+
+            .form {
+                width: 390px;
+            }
+
+            .form-input {
+                padding: 31px 16px 55px 16px;
+            }
+        }
+
+        @media screen and (max-width: 575.98px) {
+            .form {
+                width: 368px;
+            }
+
+            .form-input {
+                border: unset;
+                box-shadow: unset;
+                padding: 40px 23px 0px 23px;
+                width: 370px;
+            }
+            .img{
+                display: none;
+            }
+        }
