@@ -20,7 +20,7 @@
         .img {
             width: calc(50% - 14.5rem);
             height: 100%;
-            background-image: url("cover-login-page.png");
+            background-image: url("../cover-login-page.png");
             position: absolute;
             right: 0px;
             z-index: 1;
@@ -37,7 +37,7 @@
 
         .form {
             z-index: 3;
-            width: 550px;
+            width: 460px;
             min-height: 100%;
             position: relative;
             left: 50%;
@@ -49,12 +49,13 @@
         }
 
         .form-input {
+            width: 100%;
             position: relative;
             border: 1px solid hsla(0, 0%, 44%, .14);
             box-shadow: 0 3px 6px 0 rgb(0 0 0 / 3%);
             /* border-radius: 5px; */
             background-color: white;
-            padding: 35px;
+            padding: 45px;
         }
 
         .title,
@@ -79,7 +80,7 @@
         }
 
         .input-element {
-            margin-bottom: 0.6rem;
+            margin-bottom: 1rem;
         }
 
         .input-element label {
@@ -88,8 +89,8 @@
             font-weight: 400;
         }
 
-        input[type=email],
-        input[type=password] {
+        input[type=text]
+        {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
