@@ -7,7 +7,7 @@ function loginByUserPassword() {
         { mail: 'marukochan@gmail.com', password: '33333333' }
 
     ];
-    
+
     let inputEmail = document.getElementById("email").value;
     const emailRegex = /\S+@\S+\.\S+/;
     let inputPassword = document.getElementById("password").value;
@@ -16,7 +16,7 @@ function loginByUserPassword() {
     sessionStorage.setItem('mail', inputEmail);
 
     // validate email
-        //1. Chưa nhập email
+    //1. Chưa nhập email
     if (inputEmail == null || inputEmail == '') {
         addErrorClass("email", "error");
         showErrorMessageByElementId("messageErrorEmail", "Chưa nhập email");
@@ -33,7 +33,7 @@ function loginByUserPassword() {
 
     //validate password
 
-        //3.Chưa nhập Password
+    //3.Chưa nhập Password
     if (inputPassword == null || inputPassword == '') {
         addErrorClass("password", "error")
         showErrorMessageByElementId("messageErrorPassword", "Chưa nhập Password");
@@ -52,7 +52,7 @@ function loginByUserPassword() {
     //Check email password is correct?
     if ((document.getElementById("messageErrorEmail").style.display == "none") && (document.getElementById("messageErrorPassword").style.display == "none")) {
         for (i = 0; i < user.length; i++) {
-                //email và password đúng
+            //email và password đúng
             if ((inputEmail == user[i].mail) && (inputPassword == user[i].password)) {
                 document.getElementById("messageErrorEmailAndPassword").style.display = "none";
                 //sau 0.5s redirect sang trang home
@@ -70,8 +70,8 @@ function loginByUserPassword() {
 
 function showErrorMessageByElementId(elementId, message) {
     document.getElementById(elementId).innerHTML = message;
-    }
+}
 
-function addErrorClass(elementID, className){
-document.getElementById(elementID).classList.add(className);
+function addErrorClass(elementID, className) {
+    document.getElementById(elementID).classList.add(className);
 }
