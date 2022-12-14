@@ -145,6 +145,19 @@
             color: #2c426a;
         }
 
+        .error{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid red;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
         @media screen and (min-width: 576px) and (max-width: 991.98px) {
             body {
                 min-height: 100vh;

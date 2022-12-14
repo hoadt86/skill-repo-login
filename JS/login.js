@@ -7,10 +7,10 @@ function loginByUserPassword() {
         { mail: 'marukochan@gmail.com', password: '33333333' }
 
     ];
-
-    var inputEmail = document.getElementById("email").value;
-    var checkEmailFrom = document.getElementById("email").value.indexOf('@');
-    var inputPassword = document.getElementById("password").value;
+    
+    let inputEmail = document.getElementById("email").value;
+    const emailRegex = /\S+@\S+\.\S+/;
+    let inputPassword = document.getElementById("password").value;
 
     // Lưu giá trị inputUser vào sesionStorage
     sessionStorage.setItem('mail', inputEmail);
@@ -18,13 +18,13 @@ function loginByUserPassword() {
     // validate email
         //1. Chưa nhập email
     if (inputEmail == null || inputEmail == '') {
-        document.getElementById("email").style.border = '1px solid red';
-        document.getElementById("messageErrorEmail").innerHTML = "Chưa nhập email";
+        addErrorClass("email", "error");
+        showErrorMessageByElementId("messageErrorEmail", "Chưa nhập email");
 
         //2.Email không đúng định dạng
-    } else if (checkEmailFrom == -1) {
-        document.getElementById("email").style.border = '1px solid red';
-        document.getElementById("messageErrorEmail").innerHTML = "Email không đúng định dạng";
+    } else if (!inputEmail.match(emailRegex)) {
+        addErrorClass("email", "error")
+        showErrorMessageByElementId("messageErrorEmail", "Email không đúng định dạng");
 
     } else {
         document.getElementById("messageErrorEmail").style.display = "none";
@@ -35,17 +35,17 @@ function loginByUserPassword() {
 
         //3.Chưa nhập Password
     if (inputPassword == null || inputPassword == '') {
-        document.getElementById("password").style.border = '1px solid red';
-        document.getElementById("messageErrorPassword").innerHTML = "Chưa nhập Password";
+        addErrorClass("password", "error")
+        showErrorMessageByElementId("messageErrorPassword", "Chưa nhập Password");
 
         //4. Password không được nhập quá 20 ký tự
     } else if (inputPassword.length > 20) {
-        document.getElementById("password").style.border = '1px solid red';
-        document.getElementById("messageErrorPassword").innerHTML = "Password không được nhập quá 20 ký tự";
+        addErrorClass("password", "error");
+        showErrorMessageByElementId("messageErrorPassword", "Password không được nhập quá 20 ký tự");
 
     } else {
         document.getElementById("messageErrorPassword").style.display = "none";
-        document.getElementById("password").style.border = '1px solid #ccc';
+        addErrorClass("password", "normal");
     }
 
 
@@ -55,7 +55,6 @@ function loginByUserPassword() {
                 //email và password đúng
             if ((inputEmail == user[i].mail) && (inputPassword == user[i].password)) {
                 document.getElementById("messageErrorEmailAndPassword").style.display = "none";
-                console.log(document.getElementById("messageErrorEmailAndPassword").style.display);
                 //sau 0.5s redirect sang trang home
                 setTimeout(function () {
                     window.location = '../html/home.html';
@@ -63,8 +62,16 @@ function loginByUserPassword() {
 
                 //5. Thông tin Email hoặc Password chưa đúng
             } else {
-                document.getElementById("messageErrorEmailAndPassword").innerHTML = "Thông tin Email hoặc Password chưa đúng";
+                showErrorMessageByElementId("messageErrorEmailAndPassword", "Thông tin Email hoặc Password chưa đúng");
             }
         }
     }
+}
+
+function showErrorMessageByElementId(elementId, message) {
+    document.getElementById(elementId).innerHTML = message;
+    }
+
+function addErrorClass(elementID, className){
+document.getElementById(elementID).classList.add(className);
 }
