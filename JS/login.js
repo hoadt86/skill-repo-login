@@ -23,12 +23,12 @@ function loginByUserPassword() {
 
         //2.Email không đúng định dạng
     } else if (!inputEmail.match(emailRegex)) {
-        addErrorClass("email", "error")
+        addErrorClass("email", "error");
         showErrorMessageByElementId("messageErrorEmail", "Email không đúng định dạng");
 
     } else {
         document.getElementById("messageErrorEmail").style.display = "none";
-        document.getElementById("email").style.border = '1px solid #ccc';
+        removeErrorClass("email", "error");
     }
 
     //validate password
@@ -45,7 +45,7 @@ function loginByUserPassword() {
 
     } else {
         document.getElementById("messageErrorPassword").style.display = "none";
-        addErrorClass("password", "normal");
+        removeErrorClass("password", "error");
     }
 
 
@@ -74,4 +74,8 @@ function showErrorMessageByElementId(elementId, message) {
 
 function addErrorClass(elementID, className) {
     document.getElementById(elementID).classList.add(className);
+}
+
+function removeErrorClass (elementID, className){
+    document.getElementById(elementID).classList.remove(className);
 }

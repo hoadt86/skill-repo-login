@@ -89,7 +89,7 @@
             font-weight: 400;
         }
 
-        input[type=text]
+        .email, .password
         {
             width: 100%;
             padding: 12px 20px;
