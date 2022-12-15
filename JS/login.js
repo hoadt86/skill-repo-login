@@ -1,7 +1,7 @@
 function loginByUserPassword() {
 
     // Fake sẵn 1 màng các tài khoản user
-    let user = [
+    const user = [
         { mail: 'Honghanh@gmail.com', password: '11111111' },
         { mail: 'doccocaubai@gmail.com', password: '22222222' },
         { mail: 'marukochan@gmail.com', password: '33333333' }
