@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill-repo-login</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Skill-repo-login-screen</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
 
 </head>
 
@@ -26,20 +26,24 @@
             <span class="sub-title">クラウド型スキルシート管理webシステム</span>
             <div class="form-input">
                 <div class="input-element">
+                    <p id="messageErrorEmailAndPassword" style="color:red;margin-top:0px; margin-bottom: 0.6rem;font-size: 0.8rem"></p>
                     <label for="email">メールアドレス</label>
-                    <input type="email" id="email" name="email" placeholder="メールアドレス">
+                    <input class="email" type="text" id="email" name="email" placeholder="メールアドレス">
+                    <p id="messageErrorEmail" style="color:red;margin-top:0px; margin-bottom: 0.6rem; font-size: 0.8rem"></p>
                 </div>
                 <div class="input-element">
                     <label for="password">パスワード</label>
-                    <input type="password" id="password" name="password" placeholder="パースワード">
+                    <input class="password" type="text" id="password" name="password" placeholder="パースワード">
+                    <p id="messageErrorPassword" style="color:red;margin-top:0px; margin-bottom: 0.6rem;font-size: 0.8rem"></p>
                 </div>
 
-                <input type="submit" value="ログイン">
+                <input id="login-button" type="submit" value="ログイン" onclick="loginByUserPassword()">
                 <span class="text-link"><a href="#">パスワードをお忘れの方</a></span>
                 <span class="text-link"><a href="#">アカウントの新規登録</a></span>
             </div>
         </div>
     </div>
 </body>
+<script src="../JS/login.js"></script>
 
 </html>
